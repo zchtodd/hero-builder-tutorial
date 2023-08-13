@@ -13,6 +13,17 @@
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="w-75 p-4 mb-4 border">
         <hero-attribute-editor></hero-attribute-editor>
+        <form method="POST" action="{% url 'character' %}">
+            {% csrf_token %}
+            
+            {{ form.strength.as_hidden }}
+            {{ form.dexterity.as_hidden }}
+            {{ form.health.as_hidden }}
+            {{ form.intelligence.as_hidden }}
+            {{ form.charisma.as_hidden }}
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
 </div>
 {% endblock %}
