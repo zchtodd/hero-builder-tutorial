@@ -1,0 +1,18 @@
+{% extends "hero/base.html" %}
+{% load static %}
+
+{% block extra_js %}
+<script src="{% static 'hero/js/main.js' %}"></script>
+{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'hero/css/main.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="w-75 p-4 mb-4 border">
+        <hero-attribute-editor></hero-attribute-editor>
+    </div>
+</div>
+{% endblock %}
