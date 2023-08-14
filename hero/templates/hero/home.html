@@ -26,4 +26,25 @@
         </form>
     </div>
 </div>
+<script>
+const attributes = [
+    "Strength",
+    "Dexterity",
+    "Health",
+    "Intelligence",
+    "Charisma"
+];
+
+window.addEventListener("heroAttributesChange", (e) => {
+    for (const attribute of attributes) {
+        const lowercasedAttribute = attribute.toLowerCase();
+        const value = e.detail[attribute];
+
+        const inputElement = document.getElementById(`id_${lowercasedAttribute}`);
+        if (inputElement) {
+            inputElement.value = value;
+        }
+    }
+});
+</script>
 {% endblock %}
